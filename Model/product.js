@@ -3,7 +3,7 @@ const { Schema } = mongoose;
 
 //Schema
 const productSchema = new Schema({
-  title: { type: String, required: true },
+  title: { type: String, required: true , unique: true },
   description: String,
   price: {
     type: Number,
@@ -20,7 +20,7 @@ const productSchema = new Schema({
     min: [0, "wrong min rating"],
     max: [50, "Wrong max rating"],
   },
-  brand: { type: String, required: true, unique: true },
+  brand: { type: String, required: true },
   category: { type: String, required: true },
   thumbnail: { type: String, required: true },
   images: [String],
